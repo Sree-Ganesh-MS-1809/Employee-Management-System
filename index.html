@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/f9f109a3d9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <title>AngularJS Mini Project</title>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <nav>
+        <div class="div left-nav">
+            <h2><img src="./Images/download.png"  style="width: 30px; height: 30px; margin-right: 10px;"> Baroque Works</h2>
+        </div>
+        <div class="middle-nav">
+            <input type="text" placeholder="search" ng-model="searchQuery">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="right-nav">
+            <img src="./Images/logo1.jpeg">
+        </div>
+    </nav>
+    <div class="container">
+        <div class="min-container">
+            <div class="right-side">
+                <div class="top-content">
+                    <div class="details">
+                        <h3>Employees</h3>
+                        <h3>{{ totalEmployees }}</h3>
+                    </div>
+                    <div class="details">
+                        <h3>At Work Place</h3>
+                        <h3>{{ atWorkPlace }}</h3>
+                    </div>
+                    <div class="details">
+                        <h3>On Leave</h3>
+                        <h3>{{ onLeave }}</h3>
+                    </div>
+                    <div class="details">
+                        <h3>Employees on Hold</h3>
+                        <h3>{{ onHold }}</h3>
+                    </div>
+                </div>
+                <div class="add-employee-form">
+                    <h2>Add New Employee</h2>
+                    <form ng-submit="addEmployee()">
+                        <label for="employeeName">Name:</label>
+                        <input type="text" ng-model="newEmployee.name" required>
+            
+                        <label for="workPlace">Work Place:</label>
+                        <input type="text" ng-model="newEmployee.workPlace" required>
+            
+                        <label for="salary">Salary:</label>
+                        <input type="text" ng-model="newEmployee.salary" required>
+            
+                        <button type="submit"><i class="fas fa-plus"></i>Add Employee</button>
+                    </form>
+                </div>
+            
+                <div class="update-employee-form" ng-show="showUpdate">
+                    <h2>Update Employee</h2>
+                    <form ng-submit="updateEmployeeDetails()">
+                        <label for="updateEmployeeName">Name:</label>
+                        <input type="text" ng-model="updateEmployee.name" required>
+            
+                        <label for="updateWorkPlace">Work Place:</label>
+                        <input type="text" ng-model="updateEmployee.workPlace" required>
+            
+                        <label for="updateSalary">Salary:</label>
+                        <input type="text" ng-model="updateEmployee.salary" required>
+            
+                        <button type="submit"><i class="fas fa-save"></i>Update</button>
+                        <button ng-click="cancelUpdate()"><i class="fas fa-times"></i> Cancel</button>
+                    </form>
+                </div>
+                <div class="content">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Work Place</th>
+                                <th>Salary</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="employee in filteredEmployees()">
+                                <td><img src="Images/logo1.jpeg"></td>
+                                <td>{{ employee.name }}</td>
+                                <td>{{ employee.workPlace }}</td>
+                                <td>{{ employee.salary }}</td>
+                                <td>
+                                    <button ng-click="deleteEmployee(employee.id)"><i class="fas fa-trash"></i>Delete</button>
+                                    <button ng-click="showUpdateForm(employee)"><i class="fas fa-edit"></i>Update</button>
+                                    <button ng-click="putOnHold(employee)"><i class="fas fa-pause"></i>On Hold</button>
+                                    <button ng-click="putOnLeave(employee)"><i class="fas fa-calendar-times"></i>On Leave</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            alert("Hisashiburi dana, Mugiwara!"); 
+        };
+    </script>
+    
+</body>
+</html>

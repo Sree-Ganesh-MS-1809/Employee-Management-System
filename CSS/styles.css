@@ -1,0 +1,179 @@
+/* Define color variables */
+:root {
+    --primary-color: #0066cc; /* Background color */
+    --button-color: #4c4c4c; /* Button color */
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right top, #65dfc9, #5526a1);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* Navigation styles */
+nav {
+    width: 100%;
+    background: var(--primary-color); /* Use primary color variable */
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 50px;
+}
+
+nav .left-nav h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.left-nav h2{
+    margin-top: 5px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 0;
+}
+nav .middle-nav {
+    margin-top: 5px;
+    width: 400px;
+    height: 30px;
+    border-radius: 50px;
+    background: #ccc;
+    display: flex;
+    padding: 0px 20px;
+}
+
+nav .middle-nav input {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: #ccc;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+}
+
+nav .middle-nav i {
+    font-size: 16px;
+    margin: 7px auto;
+    cursor: pointer;
+}
+
+.right-nav {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+.right-nav img {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* .left-nav img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+} */
+
+/* Main container styles */
+.container {
+    width: 1270px;
+    margin: auto;
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.min-container {
+    width: 100%;
+}
+
+.container .right-side {
+    width: 100%;
+    padding: 0px 50px;
+}
+
+.container .right-side .top-content {
+    width: 100%;
+    display: flex;
+}
+
+.container .right-side .details {
+    margin: 5px auto;
+    border-radius: 20px;
+    width: 200px;
+    height: 100px;
+    background: #ccc;
+}
+
+.container .right-side .details h3 {
+    text-align: center;
+    padding: 0px 20px;
+    margin: 20px auto;
+}
+
+.content {
+    margin-top: 20px;
+    width: 100%;
+    height: 450px;
+    overflow: scroll;
+}
+
+.content::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Table styles */
+.right-side .table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.right-side .table th {
+    color: #fff;
+    background: #000;
+    border: none;
+    padding: 8px 8px;
+}
+
+.right-side .table tbody tr td img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.right-side .table tbody tr {
+    border: none;
+    padding: 5px 8px;
+}
+
+.right-side .table tbody tr:nth-child(odd) {
+    background: #ccc;
+}
+
+.right-side .table tbody tr:nth-child(even) {
+    background: lightslategrey;
+}
+
+/* Button styles */
+button {
+    background-color: var(--button-color); /* Use button color variable */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #333333; /* Darken the button on hover */
+}
